@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset='utf-8'>
+  <title>js typing</title>
+ </head>
+ <body>
+  <div id='divTyping'></div>
+  <script>
+  //window.onload = function () {
+   var str = '窗前明月光,<br>疑是地上霜。<br>举头思故乡,<br>低头思故乡。';
+   var i = 0;
+   function typing(){
+    //找到要打字的
+    var divTyping = document.getElementById('divTyping');
+    if (i <= str.length) {
+     setTimeout(function () {
+      divTyping.innerHTML = str.slice(0, i++) + '_';
+     }, 200);//递归调用
+     }
+    else{
+     divTyping.innerHTML = str;//结束打字,移除 _ 光标
+     i =0;
+    }
+   }
+   var int=self.setInterval('typing()',200)
+  //}
+  </script>
+ </body>
+</html>
